@@ -1,25 +1,6 @@
 // Global for trouble-shooting
 let responseTrblShoot;
 
-// GiphyConnect Constructor
-class GiphyConnect {
-  constructor(animalName){
-    this.searchTerm = animalName;
-    this.apiKey = 'gyzIIB8PNmqPRbcZ1jb53mDcQSoM7chn';
-    this.numberToReturn = 3;
-  }
- 
-  async getGiphs() {
-    const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=${numberToReturn}`);
-
-    const responseData = await response.data.json();
-    // Trouble-shooting with update of global
-    responseTrblShoot = responseData;
-    return responseData;
-  }
-  
-}
-
 function getGiphs(){
   giphyConnect.getGiphs()
   .then(results => {
@@ -38,12 +19,12 @@ UI.prototype.addAnimalCardsToPage = function(responseData) {
   // Create Cards
   let output = '';
   var play = '\uf04b';
-  var pause = 'fas fa-pause';
+  // var pause = 'fas fa-pause';
   var close = '\uf04b';
   // currently hard-coding 3 until can look at response object
   for(i = 0; i = 3; i++) {
-    var giphyResponse = {stURL: response.data[i].images.fixed_height_still.url,
-      anURL: response.data[i].images.fixed_height.url}
+    // var giphyResponse = {stURL: response.data[i].images.fixed_height_still.url,
+    //   anURL: response.data[i].images.fixed_height.url}
   
       // added into the card parent element a class = searchTerm the animal name
       // did this so that I can reference the class and grab all the cards of that type
@@ -53,7 +34,7 @@ UI.prototype.addAnimalCardsToPage = function(responseData) {
           <div class="card-body">
             <h5 id="animalName" class="card-title">${searchTerm}</h5>
         
-            <button id="pauseAnimal" type="button" class="${pause} btn btn-light"><img src="resources/img/media-pause.svg" alt="Pause Media" text-whitearia-hidden="true"> </button> 
+            <button id="pauseAnimal" type="button" class="fas fa-pause btn btn-light"><img src="resources/img/media-pause.svg" alt="Pause Media" text-whitearia-hidden="true"> </button> 
             <button id="playAnimal" type="button" class="${play} btn btn-light btn-search"><img src="resources/img/media-play.svg" alt="Play Media" text-whitearia-hidden="true"> </button> 
             <button id="closeAmial" type="button" class="${close} btn btn-light" ><img src="resources/img/x.svg" alt="Close"> </button> 
           </div>
