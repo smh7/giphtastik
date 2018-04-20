@@ -24,10 +24,10 @@ addAnimalCardsToPage(results) {
   console.log(imgSrcNoProtocol);
   // Create the card
         animalCardDiv.innerHTML =`
-        <div class="card m-5" style="width: 18rem;">
+        <div class="card m-5 ${animalName}" style="width: 18rem;">
           <img class="card-img-top" id="card-image" src='http://${imgSrcNoProtocol}' alt="animalImg" value="animated">
             <div class="card-body">
-              <h5 id="animalName" class="card-title">Card Title</h5>   
+              <h5 id="animalName" class="card-title">${animalName}</h5>   
               <button id="playAnimal" type="button" class="${play} btn btn-light btn-search"><img src="resources/img/media-play.svg" alt="Play Media" text-whitearia-hidden="true"> </button> 
               <button id="pauseAnimal" type="button" class="fas fa-pause btn btn-light"><img src="resources/img/media-pause.svg" alt="Pause Media" text-whitearia-hidden="true"> </button>            
               <button id="closeAmial" type="button" class="${close} btn btn-light" ><img src="resources/img/x.svg" alt="Close"> </button> 
@@ -47,7 +47,7 @@ addAnimalCardsToPage(results) {
     
     // build Button
     const animalButton = document.createElement('button');
-    animalButton.className = "btn btn-secondary animal-button";
+    animalButton.className = `btn btn-secondary animal-button ${animal}`;
     animalButton.innerHTML = `${animal}`;
     
     // Add Button to page

@@ -57,19 +57,35 @@ document.getElementById('btn-search4').addEventListener('click', function(e){
 
 
 
- // Add Event Listener for Buttons in top row
+ // Add Event Listener for Buttons in top row existing
 document.getElementById('btn-group').addEventListener('click', function(e) {
   // // get the animalName
-  // console.log(e.target.value);
-  // searchTerm = e.target.value;
-  // // Instantiate giphyConnect 
-  // const giphy = new GiphyConnect(searchTerm);
-  // // Instantiate UI
-  // const ui2 = new UI();
-  // giphy.getGiphs();
+  console.log(e.target.value);
+  animalName = e.target.value;
+// Instantiate giphyConnect Object
+const giphyTest = new GiphyConnect(animalName);
 
-  
+// Instantiate UI
+const ui = new UI();
+
+  // Add animal cards to page
+  giphyTest.getGiphs(animalName)
+  .then(results => {
+    console.log(results.data[0].images.fixed_height_still.url);
+    console.log(results.data[0].images.fixed_height_still.url);
+    
+    // ui.addAnimalCardsToPage(results);
+    ui.addAnimalCardsToPage(results);
+
+  })
+  .catch(err => console.log(err));
+  // ui.addAnimalCardsToPage(responseData);
+ 
+
+ e.preventDefault;
 })
+  
+
 
 
 // // Add Event Listener for Card Play - Dynamic
