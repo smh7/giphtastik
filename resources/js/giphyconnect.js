@@ -10,7 +10,7 @@ class GiphyConnect {
     const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${this.searchTerm}&limit=${this.numberToReturn}`);
     // Not certain whether response.json() or response.data.json()
     const responseData = await response.json();
-    return responseData;
+    return responseData ;
   }
   
 }
