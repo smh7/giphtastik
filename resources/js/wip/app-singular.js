@@ -88,23 +88,31 @@ const ui = new UI();
 
 
 
-// // Add Event Listener for Card Play - Dynamic
+// Add Event Listener for Card Play - Dynamic
 document.getElementById('images').addEventListener('click', function(e){
   // const idOfTargetClicked = event.target.id.toString();
   // ui.changeImage(idOfTargetClicked);
   // const parenID = 
   // console.log(event.target.parentNode.parentNode.closest('#card-image'));
 //  let imgToChange = document.querySelector('#card-image');
-function changeSource() {
-  var imageElement = document.querySelectorAll("img")[0];
-  console.log(imageElement);
-  // var source = image.src = image.src.replace("placeholder.png","01.png");
+console.log("this is " + e.target.closest('#playAnimal'));
+ let imgtoChange = document.getElementById('card-image');
+ imgtoChange.src = `http://${imgAnimatedNoProtocol}`;
+ console.log(imgtoChange.src);
+ console.log(ui.addAnimalButtonToPage.imgAnimatedNoProtocol);
+
+
 }
-// changeSource();
-  // console.log(idOfTargetClicked);
+)
 
-})
+// document.querySelector('#playAnimal').addEventListener('click', function(e) {
+//   console.log("this is " + e.target.closest('#playAnimal'));
+//  let imgtoChange = document.getElementById('card-image');
+//  imgtoChange.src = `http://${imgAnimatedNoProtocol}`;
+//  console.log(imgtoChange.src);
+//  console.log(ui.addAnimalButtonToPage.imgAnimatedNoProtocol);
 
+// })
 
 
 // Add Event Listener for Card Pause - Dynamic
